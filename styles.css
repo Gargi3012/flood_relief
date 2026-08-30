@@ -99,6 +99,24 @@ button, a, input, select {
     transform: rotate(180deg);
 }
 
+/* Video Showcase Card Styling */
+.video-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-4px);
+}
+
+.play-btn-circle {
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.3s ease;
+}
+
+.video-card:hover .play-btn-circle {
+    transform: scale(1.15);
+    background-color: #ea580c;
+}
+
 /* Mobile Drawer Overlay Animation */
 #mobileMenuDrawer {
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);

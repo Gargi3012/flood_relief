@@ -50,23 +50,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    // Sticky Bottom Bar visibility handling on scrolling to donation section
-    const donateSection = document.getElementById('donate');
-    const mobileBottomBar = document.getElementById('mobileBottomBar');
-
-    if (donateSection && mobileBottomBar) {
-        const barObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                // Dim bottom bar opacity slightly when inside donate section to avoid screen clutter
-                if (entry.isIntersecting) {
-                    mobileBottomBar.classList.add('opacity-90');
-                } else {
-                    mobileBottomBar.classList.remove('opacity-90');
-                }
-            });
-        }, { threshold: 0.2 });
-        barObserver.observe(donateSection);
-    }
+    // ESC Key listener to close modals
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeVideoModal();
+            closeReceiptModal();
+            closeMobileMenu();
+        }
+    });
 });
 
 // Mobile Navigation Drawer Functions
@@ -99,6 +90,48 @@ function closeMobileMenu() {
     document.body.style.overflow = '';
 }
 
+// Interactive Video Modal Player
+function openVideoModal(videoSrc, titleEn, titleHi, locationEn, locationHi) {
+    const modal = document.getElementById('videoModal');
+    const player = document.getElementById('modalVideoPlayer');
+    const titleEnEl = document.getElementById('videoModalTitleEn');
+    const titleHiEl = document.getElementById('videoModalTitleHi');
+    const locEnEl = document.getElementById('videoModalLocEn');
+    const locHiEl = document.getElementById('videoModalLocHi');
+
+    if (!modal || !player) return;
+
+    // Set video source
+    player.src = videoSrc;
+    if (titleEnEl) titleEnEl.innerText = titleEn;
+    if (titleHiEl) titleHiEl.innerText = titleHi;
+    if (locEnEl) locEnEl.innerText = locationEn;
+    if (locHiEl) locHiEl.innerText = locationHi;
+
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+
+    // Play video
+    player.play().catch(err => {
+        console.log('Autoplay prevented by browser, waiting for user click:', err);
+    });
+}
+
+function closeVideoModal() {
+    const modal = document.getElementById('videoModal');
+    const player = document.getElementById('modalVideoPlayer');
+
+    if (player) {
+        player.pause();
+        player.removeAttribute('src');
+        player.load();
+    }
+    if (modal) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
+}
+
 // Amount Selection Function
 function selectAmount(amount, event) {
     selectedDonationAmount = amount;
@@ -110,7 +143,6 @@ function selectAmount(amount, event) {
         clickedBtn.classList.add('active-preset');
     }
 
-    // Update receipt form input default value
     const donorAmountInput = document.getElementById('donorAmount');
     if (donorAmountInput) {
         donorAmountInput.value = amount;
@@ -124,10 +156,8 @@ function payViaUpi(appName) {
     const note = encodeURIComponent('Nepal Flood Relief Emergency Fund');
     const amount = selectedDonationAmount;
 
-    // Standard UPI Intent URI
     let upiUrl = `upi://pay?pa=${upiId}&pn=${payeeName}&am=${amount}&cu=INR&tn=${note}`;
 
-    // App-specific intent deep-linking fallback
     if (appName === 'gpay') {
         upiUrl = `upi://pay?pa=${upiId}&pn=${payeeName}&am=${amount}&cu=INR&tn=${note}`;
     } else if (appName === 'phonepe') {
@@ -136,10 +166,8 @@ function payViaUpi(appName) {
         upiUrl = `paytmmp://pay?pa=${upiId}&pn=${payeeName}&am=${amount}&cu=INR&tn=${note}`;
     }
 
-    // Attempt redirection to UPI app
     window.location.href = upiUrl;
 
-    // Fallback message if desktop or no app handler
     setTimeout(() => {
         const isHi = document.body.getAttribute('data-lang') === 'hi';
         alert(isHi ? 
@@ -148,7 +176,7 @@ function payViaUpi(appName) {
     }, 1500);
 }
 
-// Copy UPI ID Function with Enhanced Touch Feedback
+// Copy UPI ID Function with Touch Feedback
 function copyUpiId() {
     const upiIdElement = document.getElementById('upiIdText');
     if (!upiIdElement) return;
@@ -179,7 +207,6 @@ function toggleFaq(element) {
 
     const isActive = faqItem.classList.contains('active');
     
-    // Close other FAQ items for clean mobile view
     document.querySelectorAll('.faq-item').forEach(item => {
         item.classList.remove('active');
     });

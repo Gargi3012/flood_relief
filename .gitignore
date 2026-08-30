@@ -4,3 +4,7 @@ node_modules/
 *.log
 .idea/
 .vscode/
+
+# Large raw source videos
+"Video Project 25.mp4"
+"vidssave.com Rescue Efforts Continue as Thousands Remain Missing In Nepal and China 144P.mp4"

@@ -74,6 +74,10 @@
                         <span class="lang-en">Ground Situation</span>
                         <span class="lang-hi">जमीनी स्थिति</span>
                     </a>
+                    <a href="#videos" class="hover:text-orange-600 transition-colors">
+                        <span class="lang-en">Videos</span>
+                        <span class="lang-hi">वीडियो रिपोर्ट</span>
+                    </a>
                     <a href="#impact" class="hover:text-orange-600 transition-colors">
                         <span class="lang-en">Impact</span>
                         <span class="lang-hi">प्रभाव</span>
@@ -133,6 +137,13 @@
                     <span>
                         <span class="lang-en">Ground Situation</span>
                         <span class="lang-hi">जमीनी स्थिति</span>
+                    </span>
+                    <span class="text-stone-400">→</span>
+                </a>
+                <a href="#videos" onclick="closeMobileMenu()" class="block p-3 rounded-xl hover:bg-orange-50 font-semibold text-stone-800 text-base border-b border-stone-100 flex items-center justify-between">
+                    <span>
+                        <span class="lang-en">Ground Videos</span>
+                        <span class="lang-hi">ज़मीनी वीडियो रिपोर्ट</span>
                     </span>
                     <span class="text-stone-400">→</span>
                 </a>
@@ -240,6 +251,175 @@
                         <span class="lang-hi">अभी दान करें</span>
                     </a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Real Emotional Video Showcase Section -->
+    <section id="videos" class="py-14 sm:py-20 px-4 sm:px-6 bg-stone-900 text-white border-b border-stone-800">
+        <div class="max-w-6xl mx-auto fade-in">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-12">
+                <div>
+                    <span class="text-xs uppercase font-bold tracking-widest text-orange-500">
+                        <span class="lang-en">Documentary Reports</span>
+                        <span class="lang-hi">जमीनी वीडियो रिपोर्ट</span>
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-bold text-white mt-1">
+                        <span class="lang-en">Voices from the Ground in Nepal</span>
+                        <span class="lang-hi">नेपाल से जमीनी रिपोर्ट्स और आपबीती</span>
+                    </h2>
+                </div>
+                <p class="text-stone-400 text-xs sm:text-sm max-w-md mt-2 sm:mt-0">
+                    <span class="lang-en">Watch real video reports from our disaster response teams on the ground in Nuwakot, Rasuwa, and Dhading.</span>
+                    <span class="lang-hi">नुवाकोट, रसुवा और धाडिंग में तैनात हमारी राहत टीमों की वास्तविक वीडियो देखें।</span>
+                </p>
+            </div>
+
+            <!-- Video Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Video Card 1 -->
+                <div onclick="openVideoModal('video1.mp4', 'Nuwakot Mountain Rescue & Emergency Supply Air-Drop', 'नुवाकोट पहाड़ी राहत और हवाई खाद्य सामग्री आपूर्ति', 'Nuwakot District', 'नुवाकोट जिला')" class="video-card bg-stone-800 rounded-2xl overflow-hidden shadow-lg border border-stone-700/80 cursor-pointer group">
+                    <div class="relative aspect-video bg-stone-950 overflow-hidden">
+                        <img src="poster1.jpg" alt="Nuwakot Rescue Operation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+                        
+                        <!-- Location Badge -->
+                        <span class="absolute top-3 left-3 bg-red-600/90 text-white text-[10px] uppercase font-bold px-2.5 py-1 rounded-full backdrop-blur-sm">
+                            <span class="lang-en">Nuwakot Relief</span>
+                            <span class="lang-hi">नुवाकोट राहत</span>
+                        </span>
+                        
+                        <!-- Duration Badge -->
+                        <span class="absolute bottom-3 right-3 bg-black/80 text-white text-[11px] font-mono px-2 py-0.5 rounded">
+                            00:14
+                        </span>
+                        
+                        <!-- Play Button Circle Overlay -->
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="play-btn-circle w-14 h-14 rounded-full bg-orange-600 text-white flex items-center justify-center shadow-2xl">
+                                <svg class="w-6 h-6 fill-current ml-1" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-5">
+                        <h3 class="font-bold text-base text-white mb-2 line-clamp-2">
+                            <span class="lang-en">Air-Drop Relief Operation in Isolated Nuwakot Villages</span>
+                            <span class="lang-hi">कटे हुए नुवाकोट गांवों में हवाई राहत सामग्री वितरण</span>
+                        </h3>
+                        <p class="text-stone-400 text-xs leading-relaxed">
+                            <span class="lang-en">Air-drop operations delivering ration kits and shelter materials to mountain communities.</span>
+                            <span class="lang-hi">पहाड़ी गांवों तक हेलीकॉप्टर से सूखा राशन किट पहुंचाने का काम।</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Video Card 2 -->
+                <div onclick="openVideoModal('video2.mp4', 'Rasuwa Flood Survivors & Emergency Shelter Needs', 'रसुवा बाढ़ पीड़ित और आपातकालीन आश्रय', 'Rasuwa District', 'रसुवा जिला')" class="video-card bg-stone-800 rounded-2xl overflow-hidden shadow-lg border border-stone-700/80 cursor-pointer group">
+                    <div class="relative aspect-video bg-stone-950 overflow-hidden">
+                        <img src="poster2.jpg" alt="Rasuwa Survivor Story" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+                        
+                        <!-- Location Badge -->
+                        <span class="absolute top-3 left-3 bg-orange-600/90 text-white text-[10px] uppercase font-bold px-2.5 py-1 rounded-full backdrop-blur-sm">
+                            <span class="lang-en">Rasuwa Survivor Story</span>
+                            <span class="lang-hi">रसुवा आपबीती</span>
+                        </span>
+                        
+                        <!-- Duration Badge -->
+                        <span class="absolute bottom-3 right-3 bg-black/80 text-white text-[11px] font-mono px-2 py-0.5 rounded">
+                            00:14
+                        </span>
+                        
+                        <!-- Play Button Circle Overlay -->
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="play-btn-circle w-14 h-14 rounded-full bg-orange-600 text-white flex items-center justify-center shadow-2xl">
+                                <svg class="w-6 h-6 fill-current ml-1" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-5">
+                        <h3 class="font-bold text-base text-white mb-2 line-clamp-2">
+                            <span class="lang-en">"We lost everything in hours" - Family Testimony</span>
+                            <span class="lang-hi">"कुछ ही घंटों में सब कुछ खो दिया" - पीड़ित परिवार की दर्दभरी कहानी</span>
+                        </h3>
+                        <p class="text-stone-400 text-xs leading-relaxed">
+                            <span class="lang-en">Rasuwa flood survivors share their urgent need for temporary shelter and clean drinking water.</span>
+                            <span class="lang-hi">रसुवा के बाढ़ पीड़ित अस्थाई आश्रय और साफ पानी की तात्कालिक आवश्यकता पर बात करते हुए।</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Video Card 3 -->
+                <div onclick="openVideoModal('video3.mp4', 'Nepal Flood Rescue Efforts & Missing Search Report', 'नेपाल बाढ़ खोज और बचाव अभियान रिपोर्ट', 'Field Report', 'क्षेत्रीय रिपोर्ट')" class="video-card bg-stone-800 rounded-2xl overflow-hidden shadow-lg border border-stone-700/80 cursor-pointer group">
+                    <div class="relative aspect-video bg-stone-950 overflow-hidden">
+                        <img src="poster3.jpg" alt="Rescue Efforts Report" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+                        
+                        <!-- Location Badge -->
+                        <span class="absolute top-3 left-3 bg-amber-600/90 text-white text-[10px] uppercase font-bold px-2.5 py-1 rounded-full backdrop-blur-sm">
+                            <span class="lang-en">News & Field Coverage</span>
+                            <span class="lang-hi">समाचार व जमीनी रिपोर्ट</span>
+                        </span>
+                        
+                        <!-- Duration Badge -->
+                        <span class="absolute bottom-3 right-3 bg-black/80 text-white text-[11px] font-mono px-2 py-0.5 rounded">
+                            00:40
+                        </span>
+                        
+                        <!-- Play Button Circle Overlay -->
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="play-btn-circle w-14 h-14 rounded-full bg-orange-600 text-white flex items-center justify-center shadow-2xl">
+                                <svg class="w-6 h-6 fill-current ml-1" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-5">
+                        <h3 class="font-bold text-base text-white mb-2 line-clamp-2">
+                            <span class="lang-en">Rescue Operations Continue across Nepal Flood Zone</span>
+                            <span class="lang-hi">बाढ़ प्रभावित नेपाल क्षेत्रों में राहत व बचाव अभियान जारी</span>
+                        </h3>
+                        <p class="text-stone-400 text-xs leading-relaxed">
+                            <span class="lang-en">Ground documentary coverage of flood devastation, search operations, and emergency aid delivery.</span>
+                            <span class="lang-hi">बाढ़ की तबाही, खोज अभियानों और आपातकालीन सहायता वितरण की जमीनी रिपोर्ट।</span>
+                        </p>
+                    </div>
+                </div>
+                        
+                        <!-- Location Badge -->
+                        <span class="absolute top-3 left-3 bg-amber-600/90 text-white text-[10px] uppercase font-bold px-2.5 py-1 rounded-full backdrop-blur-sm">
+                            <span class="lang-en">Medical Field Camp</span>
+                            <span class="lang-hi">चिकित्सा शिविर</span>
+                        </span>
+                        
+                        <!-- Duration Badge -->
+                        <span class="absolute bottom-3 right-3 bg-black/80 text-white text-[11px] font-mono px-2 py-0.5 rounded">
+                            01:50
+                        </span>
+                        
+                        <!-- Play Button Circle Overlay -->
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="play-btn-circle w-14 h-14 rounded-full bg-orange-600 text-white flex items-center justify-center shadow-2xl">
+                                <svg class="w-6 h-6 fill-current ml-1" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-5">
+                        <h3 class="font-bold text-base text-white mb-2 line-clamp-2">
+                            <span class="lang-en">Preventing Disease Outbreaks in Dhading Relief Camps</span>
+                            <span class="lang-hi">धाडिंग शिविरों में जलजनित बीमारियों को रोकने की चिकित्सा मुहिम</span>
+                        </h3>
+                        <p class="text-stone-400 text-xs leading-relaxed">
+                            <span class="lang-en">Doctors distributing water purification tabs and basic medical aid to flood victims.</span>
+                            <span class="lang-hi">चिकित्सक पानी की गोलियां और दवाएं वितरित करते हुए।</span>
+                        </p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -611,6 +791,40 @@
             </span>
             <span>→</span>
         </a>
+    </div>
+
+    <!-- NEW: Full-Screen Video Modal Player -->
+    <div id="videoModal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-stone-900 rounded-3xl max-w-4xl w-full overflow-hidden shadow-2xl relative border border-stone-800 flex flex-col">
+            <!-- Modal Header -->
+            <div class="p-4 bg-stone-950 flex justify-between items-center border-b border-stone-800">
+                <div>
+                    <span id="videoModalLocEn" class="text-[10px] uppercase font-bold text-orange-500 tracking-wider">Location</span>
+                    <h3 id="videoModalTitleEn" class="text-base font-bold text-white leading-tight">Video Report</h3>
+                </div>
+                <button onclick="closeVideoModal()" class="w-10 h-10 rounded-full bg-stone-800 text-white flex items-center justify-center font-bold hover:bg-orange-600 transition-colors active:scale-95">✕</button>
+            </div>
+            
+            <!-- Video Player Container -->
+            <div class="relative aspect-video bg-black flex items-center justify-center">
+                <video id="modalVideoPlayer" controls controlsList="nodownload" class="w-full h-full object-contain">
+                    <source src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <!-- Modal Footer with CTA -->
+            <div class="p-4 sm:p-5 bg-stone-950 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-stone-800">
+                <p class="text-xs text-stone-400 text-center sm:text-left">
+                    <span class="lang-en">Help us deliver life-saving emergency aid to families in this video.</span>
+                    <span class="lang-hi">इस वीडियो में दिख रहे परिवारों तक जीवनरक्षक सहायता पहुंचाने में मदद करें।</span>
+                </p>
+                <a href="#donate" onclick="closeVideoModal()" class="w-full sm:w-auto py-3 px-6 bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all text-center flex-shrink-0 active:scale-95 shadow-md">
+                    <span class="lang-en">Donate For This Relief Mission</span>
+                    <span class="lang-hi">इस राहत कार्य के लिए दान करें</span>
+                </a>
+            </div>
+        </div>
     </div>
 
     <!-- Receipt / Certificate Modal -->
