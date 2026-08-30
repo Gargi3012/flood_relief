@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Punyakart - Nepal Flood Relief 2026 | Official Emergency Fund</title>
+    <meta name="description" content="Punyakart is delivering urgent emergency aid, food kits, and medical care to flood victims in Nepal's worst-hit districts including Nuwakot, Rasuwa, and Dhading.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts for English (Inter) and Hindi (Noto Sans Devanagari) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-lang="en" class="antialiased flex flex-col min-h-screen selection:bg-orange-500 selection:text-white">
+
+    <!-- Emergency Announcement Banner -->
+    <div class="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-amber-600 to-orange-600 text-white text-xs md:text-sm py-2 px-3 text-center font-semibold flex items-center justify-center space-x-2 shadow-sm">
+        <span class="inline-block w-2 h-2 rounded-full bg-white animate-pulse flex-shrink-0"></span>
+        <span class="truncate">
+            <span class="lang-en">CRITICAL UPDATE: Relief teams reaching Nuwakot. 100% funds direct allocation.</span>
+            <span class="lang-hi">अति महत्वपूर्ण: नुवाकोट में राहत कार्य जारी। 100% दान सीधे पीड़ितों तक।</span>
+        </span>
+    </div>
+
+    <!-- Mobile-First Glass Header -->
+    <header class="fixed w-full top-8 bg-[#FDFBF7]/90 backdrop-blur-md z-40 border-b border-stone-200/80 transition-all duration-300" id="mainHeader">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 md:py-4 flex justify-between items-center">
+            
+            <!-- Logo -->
+            <a href="#" class="flex items-center space-x-2.5 group">
+                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-orange-600 flex items-center justify-center text-white font-black text-lg sm:text-xl shadow-md group-hover:bg-orange-700 transition-colors">
+                    P
+                </div>
+                <div>
+                    <div class="text-xl sm:text-2xl font-extrabold tracking-tight text-stone-900 leading-none">
+                        Punyakart
+                    </div>
+                    <div class="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest text-orange-600 mt-0.5">
+                        <span class="lang-en">Relief Foundation</span>
+                        <span class="lang-hi">राहत फाउंडेशन</span>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Header Actions -->
+            <div class="flex items-center space-x-2 sm:space-x-4">
+                
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-6 text-sm font-semibold text-stone-700">
+                    <a href="#stats" class="hover:text-orange-600 transition-colors">
+                        <span class="lang-en">Ground Situation</span>
+                        <span class="lang-hi">जमीनी स्थिति</span>
+                    </a>
+                    <a href="#impact" class="hover:text-orange-600 transition-colors">
+                        <span class="lang-en">Impact</span>
+                        <span class="lang-hi">प्रभाव</span>
+                    </a>
+                    <a href="#districts" class="hover:text-orange-600 transition-colors">
+                        <span class="lang-en">Districts</span>
+                        <span class="lang-hi">प्रभावित जिले</span>
+                    </a>
+                    <a href="#faq" class="hover:text-orange-600 transition-colors">
+                        <span class="lang-en">FAQ</span>
+                        <span class="lang-hi">सवाल-जवाब</span>
+                    </a>
+                </nav>
+
+                <!-- Language Toggle Button -->
+                <button id="langToggle" class="flex items-center space-x-1 px-3 py-1.5 rounded-full border border-stone-300 hover:bg-stone-100 transition-colors text-xs sm:text-sm font-medium text-stone-700 shadow-sm active:scale-95" aria-label="Toggle Language">
+                    <span id="text-en" class="font-bold text-stone-900">EN</span>
+                    <span class="text-stone-400">/</span>
+                    <span id="text-hi" class="text-stone-500">हिंदी</span>
+                </button>
+
+                <!-- Desktop Donate CTA -->
+                <a href="#donate" class="hidden sm:inline-flex items-center justify-center bg-orange-600 hover:bg-orange-700 text-white font-bold text-sm px-5 py-2 rounded-full transition-all shadow-md hover:shadow-lg active:scale-95">
+                    <span class="lang-en">Donate Now</span>
+                    <span class="lang-hi">अभी दान करें</span>
+                </a>
+
+                <!-- Mobile Hamburger Toggle Button -->
+                <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-xl text-stone-800 hover:bg-stone-100 focus:outline-none active:scale-95" aria-label="Open mobile menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Overlay & Backdrop -->
+    <div id="mobileMenuBackdrop" onclick="closeMobileMenu()" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden transition-opacity md:hidden"></div>
+    
+    <aside id="mobileMenuDrawer" class="fixed top-0 right-0 bottom-0 w-[82vw] max-w-sm bg-white z-50 shadow-2xl transform translate-x-full md:hidden flex flex-col justify-between border-l border-stone-200">
+        <div>
+            <!-- Drawer Header -->
+            <div class="p-5 border-b border-stone-200 flex justify-between items-center bg-stone-50">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 rounded-lg bg-orange-600 text-white font-black flex items-center justify-center text-base shadow">P</div>
+                    <span class="font-bold text-stone-900 text-lg">Punyakart Menu</span>
+                </div>
+                <button onclick="closeMobileMenu()" class="w-9 h-9 rounded-full bg-stone-200/80 text-stone-700 flex items-center justify-center font-bold hover:bg-stone-300 transition-colors active:scale-95">
+                    ✕
+                </button>
+            </div>
+
+            <!-- Mobile Drawer Navigation Links -->
+            <div class="p-5 space-y-4">
+                <a href="#stats" onclick="closeMobileMenu()" class="block p-3 rounded-xl hover:bg-orange-50 font-semibold text-stone-800 text-base border-b border-stone-100 flex items-center justify-between">
+                    <span>
+                        <span class="lang-en">Ground Situation</span>
+                        <span class="lang-hi">जमीनी स्थिति</span>
+                    </span>
+                    <span class="text-stone-400">→</span>
+                </a>
+                <a href="#impact" onclick="closeMobileMenu()" class="block p-3 rounded-xl hover:bg-orange-50 font-semibold text-stone-800 text-base border-b border-stone-100 flex items-center justify-between">
+                    <span>
+                        <span class="lang-en">Impact & Transparency</span>
+                        <span class="lang-hi">प्रभाव और पारदर्शिता</span>
+                    </span>
+                    <span class="text-stone-400">→</span>
+                </a>
+                <a href="#districts" onclick="closeMobileMenu()" class="block p-3 rounded-xl hover:bg-orange-50 font-semibold text-stone-800 text-base border-b border-stone-100 flex items-center justify-between">
+                    <span>
+                        <span class="lang-en">Affected Districts</span>
+                        <span class="lang-hi">प्रभावित जिले</span>
+                    </span>
+                    <span class="text-stone-400">→</span>
+                </a>
+                <a href="#faq" onclick="closeMobileMenu()" class="block p-3 rounded-xl hover:bg-orange-50 font-semibold text-stone-800 text-base border-b border-stone-100 flex items-center justify-between">
+                    <span>
+                        <span class="lang-en">FAQ</span>
+                        <span class="lang-hi">अक्सर पूछे जाने वाले सवाल</span>
+                    </span>
+                    <span class="text-stone-400">→</span>
+                </a>
+
+                <!-- Mobile Drawer Language Toggle -->
+                <div class="pt-4">
+                    <div class="text-xs font-bold uppercase text-stone-400 mb-2">Language / भाषा</div>
+                    <button id="mobileLangToggle" class="w-full py-3 px-4 rounded-xl border border-stone-300 flex items-center justify-center space-x-2 text-sm font-semibold bg-stone-50">
+                        <span id="mobile-text-en" class="font-bold text-stone-900">English</span>
+                        <span class="text-stone-400">/</span>
+                        <span id="mobile-text-hi" class="text-stone-500">हिंदी</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Drawer Footer CTA -->
+        <div class="p-5 border-t border-stone-200 bg-stone-50 space-y-3">
+            <a href="#donate" onclick="closeMobileMenu()" class="w-full py-3.5 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-xl text-center shadow-lg block">
+                <span class="lang-en">DONATE NOW</span>
+                <span class="lang-hi">अभी दान करें</span>
+            </a>
+            <p class="text-[11px] text-center text-stone-500">100% Tax Exempted under Sec 80G</p>
+        </div>
+    </aside>
+
+    <!-- Intro Hero Section -->
+    <section class="pt-36 sm:pt-40 pb-12 sm:pb-16 px-4 sm:px-6 bg-white">
+        <div class="max-w-6xl mx-auto fade-in">
+            <div class="text-xs md:text-sm font-bold tracking-wider text-stone-900 uppercase border-b-[3px] border-orange-500 inline-block mb-4 sm:mb-6 pb-1">
+                <span class="lang-en">Disaster Relief Operation</span>
+                <span class="lang-hi">आपदा राहत अभियान</span>
+            </div>
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black leading-tight mb-4 sm:mb-6 text-stone-900 tracking-tight">
+                <span class="lang-en block">Nepal Flood Relief 2026</span>
+                <span class="lang-hi block">नेपाल बाढ़ राहत 2026</span>
+            </h1>
+            <p class="text-lg sm:text-2xl text-stone-700 leading-relaxed max-w-4xl font-normal">
+                <span class="lang-en block">Punyakart is responding to catastrophic flash flooding in Nepal, coordinating with local partners and authorities to deliver emergency food, clean water, and medical care.</span>
+                <span class="lang-hi block">पुण्यकार्ट नेपाल में विनाशकारी बाढ़ के लिए आपातकालीन भोजन, स्वच्छ पानी और चिकित्सा देखभाल प्रदान करने हेतु स्थानीय भागीदारों के साथ काम कर रहा है।</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- Split Image & Black Box Section -->
+    <section id="stats" class="w-full fade-in">
+        <div class="flex flex-col lg:flex-row w-full">
+            <!-- Field Image -->
+            <div class="w-full lg:w-1/2 h-[45vh] sm:h-[55vh] lg:h-auto min-h-[340px] relative bg-stone-200 overflow-hidden group">
+                <img src="image_83b435.jpg" alt="Flood debris and destruction in Nepal" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 bg-black/75 backdrop-blur-md text-white text-[11px] sm:text-xs px-3 py-1.5 rounded-lg font-mono border border-white/10">
+                    <span class="lang-en">Nuwakot Relief Operation Field Photo</span>
+                    <span class="lang-hi">नुवाकोट राहत अभियान क्षेत्र चित्र</span>
+                </div>
+            </div>
+            
+            <!-- Dark Impact Content Box -->
+            <div class="w-full lg:w-1/2 bg-stone-950 text-white p-6 sm:p-10 lg:p-16 flex flex-col justify-center">
+                <h2 class="text-2xl sm:text-4xl font-bold mb-6 sm:mb-8 leading-snug tracking-tight">
+                    <span class="lang-en block">Supporting Relief Care in Nepal's Affected Districts</span>
+                    <span class="lang-hi block">नेपाल के बाढ़ प्रभावित जिलों में राहत कार्यों का समर्थन</span>
+                </h2>
+                
+                <div class="space-y-5 sm:space-y-6 text-sm sm:text-lg text-stone-300">
+                    <p class="border-b border-stone-800 pb-5">
+                        <span class="lang-en block">At least <strong>768 people killed</strong> in Nepal, and more than <strong>2,500 missing</strong>. Nuwakot is among the worst-affected; emergency air drops are active. An estimated 10,000 households need immediate relief.</span>
+                        <span class="lang-hi block">नेपाल में कम से कम <strong>768 लोगों की मौत</strong>, और <strong>2,500 से अधिक लापता</strong> हैं। नुवाकोट अत्यधिक प्रभावित है। 10,000 परिवारों को तत्काल राहत की आवश्यकता है।</span>
+                    </p>
+                    
+                    <p class="border-b border-stone-800 pb-5">
+                        <span class="lang-en block">Relief teams are deploying within hours carrying critical supplies pre-positioned in-country by Punyakart.</span>
+                        <span class="lang-hi block">राहत टीमें पुण्यकार्ट द्वारा पहले से रखी गई आपूर्ति सामग्री के साथ तेजी से पहुंच रही हैं।</span>
+                    </p>
+                    
+                    <p class="font-bold text-white text-base sm:text-xl">
+                        <span class="lang-en block">100% of emergency donations support direct flood relief activities.</span>
+                        <span class="lang-hi block">100% दान सीधे बाढ़ पीड़ित परिवारों की सहायता में जाता है।</span>
+                    </p>
+                </div>
+                
+                <div class="mt-8 sm:mt-10">
+                    <a href="#donate" class="inline-block bg-orange-600 text-white font-bold tracking-wide px-8 sm:px-10 py-4 w-full text-center hover:bg-orange-700 transition-colors shadow-lg rounded-xl text-base">
+                        <span class="lang-en">DONATE NOW</span>
+                        <span class="lang-hi">अभी दान करें</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fund Progress & Transparency Tracker -->
+    <section id="impact" class="py-12 sm:py-16 bg-stone-100 border-b border-stone-200 px-4 sm:px-6">
+        <div class="max-w-6xl mx-auto fade-in">
+            <div class="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-10 shadow-md border border-stone-200">
+                <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+                    <div>
+                        <span class="text-[11px] uppercase font-bold tracking-widest text-orange-600">
+                            <span class="lang-en">Real-Time Transparency Tracker</span>
+                            <span class="lang-hi">वास्तविक समय पारदर्शिता ट्रैकर</span>
+                        </span>
+                        <h3 class="text-xl sm:text-3xl font-bold text-stone-900 mt-1">
+                            <span class="lang-en">Emergency Relief Fund Status</span>
+                            <span class="lang-hi">आपातकालीन राहत कोष स्थिति</span>
+                        </h3>
+                    </div>
+                    <div class="text-left md:text-right bg-orange-50/60 p-3 sm:p-0 rounded-xl md:bg-transparent">
+                        <div class="text-2xl sm:text-4xl font-black text-orange-600">
+                            ₹42,50,000 <span class="text-sm sm:text-lg text-stone-500 font-medium">/ ₹50,00,000</span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-stone-600 font-semibold mt-0.5">
+                            <span class="lang-en">85% of Phase 1 Target Reached</span>
+                            <span class="lang-hi">चरण 1 लक्ष्य का 85% पूरा हुआ</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="w-full bg-stone-200 h-3.5 sm:h-4 rounded-full overflow-hidden mb-6">
+                    <div class="bg-gradient-to-r from-orange-500 to-amber-500 h-full rounded-full transition-all duration-1000 shadow-inner" style="width: 85%;"></div>
+                </div>
+
+                <!-- Metrics Grid (2x2 on Mobile, 4x1 on Desktop) -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 text-center border-t border-stone-100 pt-6">
+                    <div class="p-3 sm:p-4 bg-stone-50 rounded-xl sm:rounded-2xl border border-stone-200/60">
+                        <div class="text-2xl sm:text-3xl font-black text-stone-900">4,200+</div>
+                        <div class="text-xs sm:text-sm font-medium text-stone-600 mt-1">
+                            <span class="lang-en">Food Kits Delivered</span>
+                            <span class="lang-hi">भोजन किट वितरित</span>
+                        </div>
+                    </div>
+                    <div class="p-3 sm:p-4 bg-stone-50 rounded-xl sm:rounded-2xl border border-stone-200/60">
+                        <div class="text-2xl sm:text-3xl font-black text-stone-900">2,850+</div>
+                        <div class="text-xs sm:text-sm font-medium text-stone-600 mt-1">
+                            <span class="lang-en">Water Purifiers</span>
+                            <span class="lang-hi">जल शोधक गोलियां</span>
+                        </div>
+                    </div>
+                    <div class="p-3 sm:p-4 bg-stone-50 rounded-xl sm:rounded-2xl border border-stone-200/60">
+                        <div class="text-2xl sm:text-3xl font-black text-stone-900">1,150+</div>
+                        <div class="text-xs sm:text-sm font-medium text-stone-600 mt-1">
+                            <span class="lang-en">Tarps & Shelters</span>
+                            <span class="lang-hi">तिरपाल आश्रय</span>
+                        </div>
+                    </div>
+                    <div class="p-3 sm:p-4 bg-stone-50 rounded-xl sm:rounded-2xl border border-stone-200/60">
+                        <div class="text-2xl sm:text-3xl font-black text-stone-900">18</div>
+                        <div class="text-xs sm:text-sm font-medium text-stone-600 mt-1">
+                            <span class="lang-en">Medical Camps</span>
+                            <span class="lang-hi">चिकित्सा शिविर</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Affected Districts Breakdown Grid -->
+    <section id="districts" class="py-12 sm:py-16 px-4 sm:px-6 bg-stone-50 border-b border-stone-200">
+        <div class="max-w-6xl mx-auto fade-in">
+            <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
+                <span class="text-[11px] uppercase font-bold tracking-widest text-orange-600">
+                    <span class="lang-en">Focus Areas</span>
+                    <span class="lang-hi">ध्यान केंद्रित क्षेत्र</span>
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-stone-900 mt-1">
+                    <span class="lang-en">Worst Affected Districts</span>
+                    <span class="lang-hi">सबसे ज्यादा प्रभावित जिले</span>
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+                <!-- District 1 -->
+                <div class="bg-white p-5 sm:p-6 rounded-2xl shadow-sm border border-stone-200 hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-lg sm:text-xl font-bold text-stone-900">Nuwakot (नुवाकोट)</h3>
+                        <span class="px-2.5 py-1 bg-red-100 text-red-700 font-bold text-[11px] rounded-full flex-shrink-0">
+                            <span class="lang-en">Severe Alert</span>
+                            <span class="lang-hi">अति गंभीर</span>
+                        </span>
+                    </div>
+                    <p class="text-stone-600 text-xs sm:text-sm mb-4">
+                        <span class="lang-en">Landslides cut off major road connections. Air-drop operations active for emergency food supply.</span>
+                        <span class="lang-hi">भूस्खलन से मुख्य मार्ग बाधित। भोजन पहुंचाने हेतु हवाई सहायता अभियान जारी।</span>
+                    </p>
+                    <div class="text-xs font-semibold text-stone-500 border-t pt-3 flex justify-between">
+                        <span><span class="lang-en">Target:</span> <span class="lang-hi">लक्ष्य:</span> 3,500 Families</span>
+                        <span class="text-orange-600 font-bold">Active</span>
+                    </div>
+                </div>
+
+                <!-- District 2 -->
+                <div class="bg-white p-5 sm:p-6 rounded-2xl shadow-sm border border-stone-200 hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-lg sm:text-xl font-bold text-stone-900">Rasuwa (रसुवा)</h3>
+                        <span class="px-2.5 py-1 bg-red-100 text-red-700 font-bold text-[11px] rounded-full flex-shrink-0">
+                            <span class="lang-en">High Risk</span>
+                            <span class="lang-hi">उच्च जोखिम</span>
+                        </span>
+                    </div>
+                    <p class="text-stone-600 text-xs sm:text-sm mb-4">
+                        <span class="lang-en">Flooding riverbanks affected mountain villages. Clean drinking water purification kits distributed.</span>
+                        <span class="lang-hi">नदी तट पर बाढ़ से पहाड़ी गांव प्रभावित। पीने के साफ पानी की गोलियां वितरित।</span>
+                    </p>
+                    <div class="text-xs font-semibold text-stone-500 border-t pt-3 flex justify-between">
+                        <span><span class="lang-en">Target:</span> <span class="lang-hi">लक्ष्य:</span> 2,200 Families</span>
+                        <span class="text-orange-600 font-bold">Active</span>
+                    </div>
+                </div>
+
+                <!-- District 3 -->
+                <div class="bg-white p-5 sm:p-6 rounded-2xl shadow-sm border border-stone-200 hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-lg sm:text-xl font-bold text-stone-900">Dhading & Chitwan</h3>
+                        <span class="px-2.5 py-1 bg-amber-100 text-amber-800 font-bold text-[11px] rounded-full flex-shrink-0">
+                            <span class="lang-en">Relief Camp</span>
+                            <span class="lang-hi">राहत शिविर</span>
+                        </span>
+                    </div>
+                    <p class="text-stone-600 text-xs sm:text-sm mb-4">
+                        <span class="lang-en">Temporary medical relief camps established to prevent waterborne disease outbreaks.</span>
+                        <span class="lang-hi">जलजनित बीमारियों को रोकने के लिए अस्थायी चिकित्सा राहत शिविर।</span>
+                    </p>
+                    <div class="text-xs font-semibold text-stone-500 border-t pt-3 flex justify-between">
+                        <span><span class="lang-en">Target:</span> <span class="lang-hi">लक्ष्य:</span> 4,300 Families</span>
+                        <span class="text-orange-600 font-bold">Active</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile-First Donation Section -->
+    <section id="donate" class="py-14 sm:py-20 px-4 sm:px-6 flex-grow bg-[#FDFBF7]">
+        <div class="max-w-3xl mx-auto bg-white rounded-3xl shadow-xl border border-stone-200 p-5 sm:p-10 fade-in text-center relative overflow-hidden">
+            
+            <div class="absolute top-0 right-0 w-28 h-28 sm:w-36 sm:h-36 bg-orange-100 rounded-bl-full -z-0 opacity-50 pointer-events-none"></div>
+
+            <h2 class="text-2xl sm:text-4xl font-black text-stone-900 mb-2 relative z-10">
+                <span class="lang-en block">Make an Emergency Contribution</span>
+                <span class="lang-hi block">आपातकालीन दान करें</span>
+            </h2>
+            <p class="text-stone-600 mb-6 text-xs sm:text-base">
+                <span class="lang-en">Choose support pack or pay directly via UPI / QR code.</span>
+                <span class="lang-hi">सहायता पैक चुनें या सीधे UPI / QR कोड के माध्यम से भुगतान करें।</span>
+            </p>
+
+            <!-- Preset Amount Selector (2x2 on Mobile) -->
+            <div class="mb-8 text-left">
+                <label class="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-3 text-center">
+                    <span class="lang-en">Select Support Pack</span>
+                    <span class="lang-hi">सहायता पैक चुनें</span>
+                </label>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3" id="presetButtons">
+                    <button type="button" onclick="selectAmount(1000, event)" class="amount-btn p-3 rounded-2xl border-2 border-stone-200 hover:border-orange-500 transition-all text-center group bg-white active:scale-95">
+                        <div class="font-black text-base sm:text-lg text-stone-800 group-hover:text-orange-600">₹1,000</div>
+                        <div class="text-[10px] sm:text-[11px] text-stone-500 font-medium">
+                            <span class="lang-en">Ration Pack</span>
+                            <span class="lang-hi">राशन किट</span>
+                        </div>
+                    </button>
+                    <button type="button" onclick="selectAmount(2500, event)" class="amount-btn active-preset p-3 rounded-2xl border-2 border-orange-500 bg-orange-50 text-center group active:scale-95">
+                        <div class="font-black text-base sm:text-lg text-orange-600">₹2,500</div>
+                        <div class="text-[10px] sm:text-[11px] text-orange-700 font-medium">
+                            <span class="lang-en">Medical & Tarp</span>
+                            <span class="lang-hi">दवा व तिरपाल</span>
+                        </div>
+                    </button>
+                    <button type="button" onclick="selectAmount(5000, event)" class="amount-btn p-3 rounded-2xl border-2 border-stone-200 hover:border-orange-500 transition-all text-center group bg-white active:scale-95">
+                        <div class="font-black text-base sm:text-lg text-stone-800 group-hover:text-orange-600">₹5,000</div>
+                        <div class="text-[10px] sm:text-[11px] text-stone-500 font-medium">
+                            <span class="lang-en">Family Care</span>
+                            <span class="lang-hi">परिवार सुरक्षा</span>
+                        </div>
+                    </button>
+                    <button type="button" onclick="selectAmount(10000, event)" class="amount-btn p-3 rounded-2xl border-2 border-stone-200 hover:border-orange-500 transition-all text-center group bg-white active:scale-95">
+                        <div class="font-black text-base sm:text-lg text-stone-800 group-hover:text-orange-600">₹10,000</div>
+                        <div class="text-[10px] sm:text-[11px] text-stone-500 font-medium">
+                            <span class="lang-en">Community</span>
+                            <span class="lang-hi">सामुदायिक राहत</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Direct Mobile UPI Payment Launcher Section -->
+            <div class="mb-8 bg-stone-50 border border-stone-200 rounded-2xl p-4 text-center">
+                <div class="text-xs font-bold uppercase tracking-wider text-stone-500 mb-3">
+                    <span class="lang-en">1-Tap Direct UPI App Payment</span>
+                    <span class="lang-hi">1-टैप सीधे UPI ऐप से भुगतान करें</span>
+                </div>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                    <button onclick="payViaUpi('gpay')" class="py-2.5 px-3 bg-white border border-stone-300 hover:border-blue-500 rounded-xl font-bold text-xs text-stone-800 flex items-center justify-center space-x-1.5 shadow-sm active:scale-95">
+                        <span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span>
+                        <span>Google Pay</span>
+                    </button>
+                    <button onclick="payViaUpi('phonepe')" class="py-2.5 px-3 bg-white border border-stone-300 hover:border-purple-600 rounded-xl font-bold text-xs text-stone-800 flex items-center justify-center space-x-1.5 shadow-sm active:scale-95">
+                        <span class="w-2.5 h-2.5 rounded-full bg-purple-600"></span>
+                        <span>PhonePe</span>
+                    </button>
+                    <button onclick="payViaUpi('paytm')" class="py-2.5 px-3 bg-white border border-stone-300 hover:border-sky-500 rounded-xl font-bold text-xs text-stone-800 flex items-center justify-center space-x-1.5 shadow-sm active:scale-95">
+                        <span class="w-2.5 h-2.5 rounded-full bg-sky-500"></span>
+                        <span>Paytm</span>
+                    </button>
+                    <button onclick="payViaUpi('bhim')" class="py-2.5 px-3 bg-white border border-stone-300 hover:border-emerald-600 rounded-xl font-bold text-xs text-stone-800 flex items-center justify-center space-x-1.5 shadow-sm active:scale-95">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
+                        <span>BHIM / Any UPI</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- QR Code Container -->
+            <div class="mb-6 relative inline-block group">
+                <div class="w-56 h-56 sm:w-64 sm:h-64 mx-auto bg-stone-50 border-2 border-stone-300 rounded-2xl overflow-hidden shadow-lg p-2 bg-white transition-transform group-hover:scale-105">
+                    <img src="qr_code.jpg" alt="Punyakart Official UPI Donation QR Code" class="w-full h-full object-contain rounded-xl">
+                </div>
+                <div class="mt-2 text-xs font-semibold text-stone-500">
+                    <span class="lang-en">Scan with GPay, PhonePe, Paytm or BHIM</span>
+                    <span class="lang-hi">GPay, PhonePe, Paytm या BHIM से स्कैन करें</span>
+                </div>
+            </div>
+
+            <!-- Phone / UPI Detail Component -->
+            <div class="mb-8">
+                <div class="w-full max-w-md mx-auto bg-stone-50 border-2 border-stone-200 rounded-2xl p-3.5 sm:p-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-stone-700 shadow-sm">
+                    <div class="text-left w-full sm:w-auto">
+                        <div class="text-[10px] uppercase font-bold tracking-wider text-stone-400">Official VPA</div>
+                        <div class="text-base sm:text-lg font-mono font-bold text-stone-900" id="upiIdText">donate@punyakart</div>
+                    </div>
+                    <button onclick="copyUpiId()" class="w-full sm:w-auto px-4 py-2.5 bg-stone-900 hover:bg-stone-800 text-white rounded-xl text-xs font-bold tracking-wider transition-all active:scale-95 flex items-center justify-center space-x-1 min-h-[44px]">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                        <span class="copyBtnText">
+                            <span class="lang-en">COPY UPI</span>
+                            <span class="lang-hi">UPI कॉपी करें</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Trust Line Badge -->
+            <div class="flex items-center justify-center gap-3 text-green-800 bg-green-50/80 border border-green-200 py-3.5 px-4 rounded-2xl max-w-lg mx-auto text-left">
+                <svg class="w-5 h-5 flex-shrink-0 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <p class="font-medium text-xs sm:text-sm leading-snug">
+                    <span class="lang-en">100% of your contribution goes directly to flood relief in Nepal. 80G tax benefits applicable.</span>
+                    <span class="lang-hi">आपका पूरा योगदान सीधे नेपाल में बाढ़ राहत कार्यों में जाता है। 80G कर छूट लागू।</span>
+                </p>
+            </div>
+
+            <!-- Certificate Generation Link -->
+            <div class="mt-6">
+                <button onclick="openReceiptModal()" class="text-xs font-semibold text-stone-600 hover:text-orange-600 underline transition-colors p-2">
+                    <span class="lang-en">Need donation receipt / 80G tax certificate? Click here</span>
+                    <span class="lang-hi">दान रसीद / 80G कर छूट प्रमाण पत्र चाहिए? यहाँ क्लिक करें</span>
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Mobile-Optimized Accordion FAQ Section -->
+    <section id="faq" class="py-12 sm:py-16 px-4 sm:px-6 bg-white border-t border-stone-200">
+        <div class="max-w-3xl mx-auto fade-in">
+            <h2 class="text-2xl sm:text-3xl font-bold text-center text-stone-900 mb-8">
+                <span class="lang-en">Frequently Asked Questions</span>
+                <span class="lang-hi">अक्सर पूछे जाने वाले सवाल</span>
+            </h2>
+
+            <div class="space-y-3">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item active border border-stone-200 rounded-2xl bg-stone-50/50 overflow-hidden transition-colors">
+                    <button onclick="toggleFaq(this)" class="w-full p-4 sm:p-5 text-left font-bold text-stone-900 text-sm sm:text-base flex justify-between items-center space-x-3 focus:outline-none">
+                        <span>
+                            <span class="lang-en">How is Punyakart ensuring aid reaches remote areas?</span>
+                            <span class="lang-hi">पुण्यकार्ट दूरदराज के क्षेत्रों तक सहायता कैसे पहुंचा रहा है?</span>
+                        </span>
+                        <svg class="faq-icon w-5 h-5 text-stone-500 transform transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer px-4 pb-4 sm:px-5 sm:pb-5 text-xs sm:text-sm text-stone-600 leading-relaxed border-t border-stone-200/50 pt-3">
+                        <span class="lang-en">We collaborate with local Nepali search and rescue units, community leaders, and local non-profits stationed in Nuwakot and Rasuwa. Supply air-drops and local volunteers reach cut-off mountain villages.</span>
+                        <span class="lang-hi">हम नुवाकोट और रसुवा में तैनात स्थानीय खोज और बचाव इकाइयों, सामुदायिक नेताओं और गैर-लाभकारी संस्थाओं के साथ सहयोग करते हैं। कटे हुए पहाड़ी गांवों तक हवाई आपूर्ति की जाती है।</span>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item border border-stone-200 rounded-2xl bg-stone-50/50 overflow-hidden transition-colors">
+                    <button onclick="toggleFaq(this)" class="w-full p-4 sm:p-5 text-left font-bold text-stone-900 text-sm sm:text-base flex justify-between items-center space-x-3 focus:outline-none">
+                        <span>
+                            <span class="lang-en">Are donations eligible for 80G tax exemption?</span>
+                            <span class="lang-hi">क्या दान 80G कर छूट के लिए योग्य हैं?</span>
+                        </span>
+                        <svg class="faq-icon w-5 h-5 text-stone-500 transform transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer px-4 pb-4 sm:px-5 sm:pb-5 text-xs sm:text-sm text-stone-600 leading-relaxed border-t border-stone-200/50 pt-3">
+                        <span class="lang-en">Yes. Punyakart is a registered relief trust. Indian donors receive 80G tax exemption certificates instantly after entering donation details in our receipt generator.</span>
+                        <span class="lang-hi">हां। पुण्यकार्ट एक पंजीकृत ट्रस्ट है। हमारे रसीद जनरेटर में विवरण दर्ज करके भारतीय दानकर्ता तुरंत 80G कर छूट प्रमाणपत्र प्राप्त कर सकते हैं।</span>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item border border-stone-200 rounded-2xl bg-stone-50/50 overflow-hidden transition-colors">
+                    <button onclick="toggleFaq(this)" class="w-full p-4 sm:p-5 text-left font-bold text-stone-900 text-sm sm:text-base flex justify-between items-center space-x-3 focus:outline-none">
+                        <span>
+                            <span class="lang-en">What items are inside each Relief Kit?</span>
+                            <span class="lang-hi">प्रत्येक राहत किट में क्या सामग्री है?</span>
+                        </span>
+                        <svg class="faq-icon w-5 h-5 text-stone-500 transform transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer px-4 pb-4 sm:px-5 sm:pb-5 text-xs sm:text-sm text-stone-600 leading-relaxed border-t border-stone-200/50 pt-3">
+                        <span class="lang-en">Each kit provides a family of 5 with 15 days of dry rations (rice, lentils, salt, oil), water purification tablets, tarpaulins for shelter, hygiene kits, and emergency medical kits.</span>
+                        <span class="lang-hi">प्रत्येक किट 5 सदस्यों वाले परिवार को 15 दिनों का सूखा राशन (चावल, दाल, नमक, तेल), जल शोधन गोलियां, तिरपाल, स्वच्छता किट और चिकित्सा सामग्री प्रदान करती है।</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-950 text-stone-300 py-10 sm:py-14 px-4 sm:px-6 text-center">
+        <div class="max-w-4xl mx-auto fade-in">
+            <div class="flex items-center justify-center space-x-2 mb-3">
+                <div class="w-8 h-8 rounded-lg bg-orange-600 text-white font-black flex items-center justify-center text-lg">P</div>
+                <h3 class="text-xl sm:text-2xl font-bold text-white">Punyakart Relief Foundation</h3>
+            </div>
+            <p class="text-stone-400 mb-6 text-sm sm:text-base">
+                <span class="lang-en block">Standing in solidarity with Nepal flood survivors.</span>
+                <span class="lang-hi block">नेपाल के बाढ़ पीड़ितों के साथ एकजुटता में खड़े हैं।</span>
+            </p>
+
+            <div class="text-xs text-stone-500 border-t border-stone-800 pt-6">
+                &copy; <script>document.write(new Date().getFullYear())</script> Punyakart Relief Foundation. 
+                <span class="lang-en">100% Non-Profit Relief Operation.</span>
+                <span class="lang-hi">100% गैर-लाभकारी राहत संचालन।</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky Mobile Bottom Action Bar (Only Visible on Mobile < md) -->
+    <div id="mobileBottomBar" class="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-stone-900/95 border-t border-stone-800 p-3 flex items-center justify-between shadow-2xl backdrop-blur-md transition-opacity">
+        <button onclick="copyUpiId()" class="py-2.5 px-3 bg-stone-800 hover:bg-stone-700 text-white rounded-xl text-xs font-bold flex items-center space-x-1 active:scale-95 border border-stone-700">
+            <svg class="w-4 h-4 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+            <span class="copyBtnText">
+                <span class="lang-en">COPY UPI</span>
+                <span class="lang-hi">UPI कॉपी</span>
+            </span>
+        </button>
+        <a href="#donate" class="py-3 px-6 bg-gradient-to-r from-orange-500 to-amber-600 text-white font-black text-xs uppercase tracking-wider rounded-xl shadow-lg active:scale-95 flex items-center space-x-1.5 pulse-glow">
+            <span>
+                <span class="lang-en">DONATE NOW</span>
+                <span class="lang-hi">अभी दान करें</span>
+            </span>
+            <span>→</span>
+        </a>
+    </div>
+
+    <!-- Receipt / Certificate Modal -->
+    <div id="receiptModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl relative border border-stone-200">
+            <button onclick="closeReceiptModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-stone-100 flex items-center justify-center text-stone-600 font-bold hover:bg-stone-200 active:scale-95">✕</button>
+            
+            <h3 class="text-lg sm:text-xl font-bold text-stone-900 mb-1">
+                <span class="lang-en">Donation Receipt Generator</span>
+                <span class="lang-hi">दान रसीद जनरेटर</span>
+            </h3>
+            <p class="text-xs text-stone-500 mb-5">
+                <span class="lang-en">Generate instant 80G tax receipt certificate.</span>
+                <span class="lang-hi">तत्काल 80G कर छूट रसीद प्रमाणपत्र प्राप्त करें।</span>
+            </p>
+
+            <form id="receiptForm" onsubmit="generateReceipt(event)" class="space-y-4 text-left">
+                <div>
+                    <label class="block text-xs font-bold text-stone-700 mb-1">Donor Name / नाम</label>
+                    <input type="text" id="donorName" required placeholder="e.g. Ramesh Kumar" class="w-full px-3.5 py-2.5 border border-stone-300 rounded-xl text-sm focus:outline-none focus:border-orange-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-stone-700 mb-1">Amount Donated (INR) / राशि</label>
+                    <input type="number" id="donorAmount" required placeholder="2500" class="w-full px-3.5 py-2.5 border border-stone-300 rounded-xl text-sm focus:outline-none focus:border-orange-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-stone-700 mb-1">UPI Ref / Transaction ID (Optional)</label>
+                    <input type="text" id="txId" placeholder="e.g. 423910293810" class="w-full px-3.5 py-2.5 border border-stone-300 rounded-xl text-sm focus:outline-none focus:border-orange-500">
+                </div>
+                <button type="submit" class="w-full py-3.5 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-xl text-sm transition-colors shadow-md active:scale-95">
+                    <span class="lang-en">Download Receipt</span>
+                    <span class="lang-hi">रसीद डाउनलोड करें</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- External Script -->
+    <script src="script.js"></script>
+</body>
+</html>
