@@ -1,0 +1,123 @@
+/* Punyakart Nepal Flood Relief - Mobile-First Custom Stylesheet */
+
+:root {
+    --brand-orange: #f97316;
+    --brand-orange-dark: #ea580c;
+    --brand-orange-light: #fff7ed;
+    --bg-warm: #FDFBF7;
+    --stone-dark: #1c1917;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-warm);
+    color: #292524;
+    padding-bottom: 72px; /* Space for Mobile Bottom Action Bar */
+}
+
+@media (min-width: 768px) {
+    body {
+        padding-bottom: 0;
+    }
+}
+
+body[data-lang="hi"] {
+    font-family: 'Noto Sans Devanagari', system-ui, sans-serif;
+}
+
+/* Language Switcher Display Control */
+body[data-lang="en"] .lang-hi { 
+    display: none !important; 
+}
+
+body[data-lang="hi"] .lang-en { 
+    display: none !important; 
+}
+
+/* Intersection Observer Scroll Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Backdrop Blur & Glass Cards */
+.glass-card {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-header {
+    background: rgba(253, 251, 247, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* Touch Target Minimum Sizing for Mobile */
+button, a, input, select {
+    touch-action: manipulation;
+}
+
+/* Preset Button Active Highlights */
+.amount-btn {
+    min-height: 52px;
+}
+
+.amount-btn.active-preset {
+    border-color: #f97316 !important;
+    background-color: #fff7ed !important;
+    box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.2);
+}
+
+/* FAQ Accordion Styling */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0, 1, 0, 1), opacity 0.3s ease;
+    opacity: 0;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+    opacity: 1;
+    transition: max-height 0.5s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(180deg);
+}
+
+/* Mobile Drawer Overlay Animation */
+#mobileMenuDrawer {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#mobileMenuDrawer.translate-x-full {
+    transform: translateX(100%);
+}
+
+#mobileMenuDrawer.translate-x-0 {
+    transform: translateX(0);
+}
+
+/* Pulse Glow Effect for Emergency Banner & CTA */
+@keyframes softPulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.85; }
+}
+
+.pulse-glow {
+    animation: softPulse 2s infinite;
+}
