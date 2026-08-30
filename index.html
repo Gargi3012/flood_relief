@@ -794,10 +794,10 @@
     </div>
 
     <!-- NEW: Full-Screen Video Modal Player -->
-    <div id="videoModal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
-        <div class="bg-stone-900 rounded-3xl max-w-4xl w-full overflow-hidden shadow-2xl relative border border-stone-800 flex flex-col">
+    <div id="videoModal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-[100] flex items-center justify-center p-4 hidden">
+        <div class="bg-stone-900 rounded-3xl max-w-4xl w-full overflow-hidden shadow-2xl relative border border-stone-800 flex flex-col max-h-[90vh]">
             <!-- Modal Header -->
-            <div class="p-4 bg-stone-950 flex justify-between items-center border-b border-stone-800">
+            <div class="p-4 bg-stone-950 flex justify-between items-center border-b border-stone-800 flex-shrink-0">
                 <div>
                     <span id="videoModalLocEn" class="text-[10px] uppercase font-bold text-orange-500 tracking-wider">Location</span>
                     <h3 id="videoModalTitleEn" class="text-base font-bold text-white leading-tight">Video Report</h3>
@@ -806,15 +806,15 @@
             </div>
             
             <!-- Video Player Container -->
-            <div class="relative aspect-video bg-black flex items-center justify-center">
-                <video id="modalVideoPlayer" controls controlsList="nodownload" class="w-full h-full object-contain">
+            <div class="relative aspect-video bg-black flex items-center justify-center overflow-hidden flex-grow">
+                <video id="modalVideoPlayer" controls playsinline preload="auto" class="w-full h-full object-contain">
                     <source src="" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
 
             <!-- Modal Footer with CTA -->
-            <div class="p-4 sm:p-5 bg-stone-950 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-stone-800">
+            <div class="p-4 sm:p-5 bg-stone-950 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-stone-800 flex-shrink-0">
                 <p class="text-xs text-stone-400 text-center sm:text-left">
                     <span class="lang-en">Help us deliver life-saving emergency aid to families in this video.</span>
                     <span class="lang-hi">इस वीडियो में दिख रहे परिवारों तक जीवनरक्षक सहायता पहुंचाने में मदद करें।</span>

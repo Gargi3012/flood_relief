@@ -101,8 +101,11 @@ function openVideoModal(videoSrc, titleEn, titleHi, locationEn, locationHi) {
 
     if (!modal || !player) return;
 
-    // Set video source
+    // Reset and set video source
+    player.pause();
     player.src = videoSrc;
+    player.load();
+
     if (titleEnEl) titleEnEl.innerText = titleEn;
     if (titleHiEl) titleHiEl.innerText = titleHi;
     if (locEnEl) locEnEl.innerText = locationEn;
@@ -111,10 +114,17 @@ function openVideoModal(videoSrc, titleEn, titleHi, locationEn, locationHi) {
     modal.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
 
-    // Play video
-    player.play().catch(err => {
-        console.log('Autoplay prevented by browser, waiting for user click:', err);
-    });
+    // Play video with browser policy fallback
+    const playPromise = player.play();
+    if (playPromise !== undefined) {
+        playPromise.then(() => {
+            console.log('Video playback started successfully');
+        }).catch(err => {
+            console.warn('Unmuted playback prevented by browser, playing muted:', err);
+            player.muted = true;
+            player.play().catch(e => console.error('Video play error:', e));
+        });
+    }
 }
 
 function closeVideoModal() {
