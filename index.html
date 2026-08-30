@@ -279,28 +279,18 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
                 <!-- Video Card 1 -->
-                <div onclick="openVideoModal('video1.mp4', 'Nuwakot Mountain Rescue & Emergency Supply Air-Drop', 'नुवाकोट पहाड़ी राहत और हवाई खाद्य सामग्री आपूर्ति', 'Nuwakot District', 'नुवाकोट जिला')" class="video-card bg-stone-800 rounded-2xl overflow-hidden shadow-lg border border-stone-700/80 cursor-pointer group">
+                <div class="video-card bg-stone-800 rounded-2xl overflow-hidden shadow-lg border border-stone-700/80 group">
                     <div class="relative aspect-video bg-stone-950 overflow-hidden">
-                        <img src="poster1.jpg" alt="Nuwakot Rescue Operation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
-                        
+                        <video controls playsinline preload="metadata" poster="poster1.jpg" class="w-full h-full object-cover">
+                            <source src="video1.mp4" type="video/mp4">
+                            <source src="video1.webm" type="video/webm">
+                            Your browser does not support the video tag.
+                        </video>
                         <!-- Location Badge -->
-                        <span class="absolute top-3 left-3 bg-red-600/90 text-white text-[10px] uppercase font-bold px-2.5 py-1 rounded-full backdrop-blur-sm">
+                        <span class="absolute top-3 left-3 bg-red-600/90 text-white text-[10px] uppercase font-bold px-2.5 py-1 rounded-full backdrop-blur-sm pointer-events-none z-10">
                             <span class="lang-en">Nuwakot Relief</span>
                             <span class="lang-hi">नुवाकोट राहत</span>
                         </span>
-                        
-                        <!-- Duration Badge -->
-                        <span class="absolute bottom-3 right-3 bg-black/80 text-white text-[11px] font-mono px-2 py-0.5 rounded">
-                            00:14
-                        </span>
-                        
-                        <!-- Play Button Circle Overlay -->
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="play-btn-circle w-14 h-14 rounded-full bg-orange-600 text-white flex items-center justify-center shadow-2xl">
-                                <svg class="w-6 h-6 fill-current ml-1" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                            </div>
-                        </div>
                     </div>
                     
                     <div class="p-5">
@@ -316,28 +306,18 @@
                 </div>
 
                 <!-- Video Card 2 -->
-                <div onclick="openVideoModal('video2.mp4', 'Rasuwa Flood Survivors & Emergency Shelter Needs', 'रसुवा बाढ़ पीड़ित और आपातकालीन आश्रय', 'Rasuwa District', 'रसुवा जिला')" class="video-card bg-stone-800 rounded-2xl overflow-hidden shadow-lg border border-stone-700/80 cursor-pointer group">
+                <div class="video-card bg-stone-800 rounded-2xl overflow-hidden shadow-lg border border-stone-700/80 group">
                     <div class="relative aspect-video bg-stone-950 overflow-hidden">
-                        <img src="poster2.jpg" alt="Rasuwa Survivor Story" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
-                        
+                        <video controls playsinline preload="metadata" poster="poster2.jpg" class="w-full h-full object-cover">
+                            <source src="video2.mp4" type="video/mp4">
+                            <source src="video2.webm" type="video/webm">
+                            Your browser does not support the video tag.
+                        </video>
                         <!-- Location Badge -->
-                        <span class="absolute top-3 left-3 bg-orange-600/90 text-white text-[10px] uppercase font-bold px-2.5 py-1 rounded-full backdrop-blur-sm">
+                        <span class="absolute top-3 left-3 bg-orange-600/90 text-white text-[10px] uppercase font-bold px-2.5 py-1 rounded-full backdrop-blur-sm pointer-events-none z-10">
                             <span class="lang-en">Rasuwa Survivor Story</span>
                             <span class="lang-hi">रसुवा आपबीती</span>
                         </span>
-                        
-                        <!-- Duration Badge -->
-                        <span class="absolute bottom-3 right-3 bg-black/80 text-white text-[11px] font-mono px-2 py-0.5 rounded">
-                            00:14
-                        </span>
-                        
-                        <!-- Play Button Circle Overlay -->
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="play-btn-circle w-14 h-14 rounded-full bg-orange-600 text-white flex items-center justify-center shadow-2xl">
-                                <svg class="w-6 h-6 fill-current ml-1" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                            </div>
-                        </div>
                     </div>
                     
                     <div class="p-5">
@@ -353,28 +333,18 @@
                 </div>
 
                 <!-- Video Card 3 -->
-                <div onclick="openVideoModal('video3.mp4', 'Nepal Flood Rescue Efforts & Missing Search Report', 'नेपाल बाढ़ खोज और बचाव अभियान रिपोर्ट', 'Field Report', 'क्षेत्रीय रिपोर्ट')" class="video-card bg-stone-800 rounded-2xl overflow-hidden shadow-lg border border-stone-700/80 cursor-pointer group">
+                <div class="video-card bg-stone-800 rounded-2xl overflow-hidden shadow-lg border border-stone-700/80 group">
                     <div class="relative aspect-video bg-stone-950 overflow-hidden">
-                        <img src="poster3.jpg" alt="Rescue Efforts Report" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
-                        
+                        <video controls playsinline preload="metadata" poster="poster3.jpg" class="w-full h-full object-cover">
+                            <source src="video3.mp4" type="video/mp4">
+                            <source src="video3.webm" type="video/webm">
+                            Your browser does not support the video tag.
+                        </video>
                         <!-- Location Badge -->
-                        <span class="absolute top-3 left-3 bg-amber-600/90 text-white text-[10px] uppercase font-bold px-2.5 py-1 rounded-full backdrop-blur-sm">
+                        <span class="absolute top-3 left-3 bg-amber-600/90 text-white text-[10px] uppercase font-bold px-2.5 py-1 rounded-full backdrop-blur-sm pointer-events-none z-10">
                             <span class="lang-en">News & Field Coverage</span>
                             <span class="lang-hi">समाचार व जमीनी रिपोर्ट</span>
                         </span>
-                        
-                        <!-- Duration Badge -->
-                        <span class="absolute bottom-3 right-3 bg-black/80 text-white text-[11px] font-mono px-2 py-0.5 rounded">
-                            00:40
-                        </span>
-                        
-                        <!-- Play Button Circle Overlay -->
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="play-btn-circle w-14 h-14 rounded-full bg-orange-600 text-white flex items-center justify-center shadow-2xl">
-                                <svg class="w-6 h-6 fill-current ml-1" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                            </div>
-                        </div>
                     </div>
                     
                     <div class="p-5">
@@ -388,38 +358,6 @@
                         </p>
                     </div>
                 </div>
-                        
-                        <!-- Location Badge -->
-                        <span class="absolute top-3 left-3 bg-amber-600/90 text-white text-[10px] uppercase font-bold px-2.5 py-1 rounded-full backdrop-blur-sm">
-                            <span class="lang-en">Medical Field Camp</span>
-                            <span class="lang-hi">चिकित्सा शिविर</span>
-                        </span>
-                        
-                        <!-- Duration Badge -->
-                        <span class="absolute bottom-3 right-3 bg-black/80 text-white text-[11px] font-mono px-2 py-0.5 rounded">
-                            01:50
-                        </span>
-                        
-                        <!-- Play Button Circle Overlay -->
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="play-btn-circle w-14 h-14 rounded-full bg-orange-600 text-white flex items-center justify-center shadow-2xl">
-                                <svg class="w-6 h-6 fill-current ml-1" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="p-5">
-                        <h3 class="font-bold text-base text-white mb-2 line-clamp-2">
-                            <span class="lang-en">Preventing Disease Outbreaks in Dhading Relief Camps</span>
-                            <span class="lang-hi">धाडिंग शिविरों में जलजनित बीमारियों को रोकने की चिकित्सा मुहिम</span>
-                        </h3>
-                        <p class="text-stone-400 text-xs leading-relaxed">
-                            <span class="lang-en">Doctors distributing water purification tabs and basic medical aid to flood victims.</span>
-                            <span class="lang-hi">चिकित्सक पानी की गोलियां और दवाएं वितरित करते हुए।</span>
-                        </p>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
